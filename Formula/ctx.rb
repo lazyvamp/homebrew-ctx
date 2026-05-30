@@ -18,21 +18,21 @@
 # Using `#{version}` there silently rendered URLs like `.../v//...` and
 # 404'd. A class-level constant sidesteps the scoping gotcha.
 class Ctx < Formula
-  CTX_VERSION = "v0.1.2".freeze
+  CTX_VERSION = "v0.1.3".freeze
 
   desc "Deterministic code context compiler — feeds your LLM exactly the right files"
   homepage "https://ctx.sh"
   license "MIT"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/lazyvamp/ctx-dist/releases/download/#{CTX_VERSION}/ctx-darwin-arm64"
-      sha256 "7b8e57057d3c13809d3ae6b338a3011e1ac797d146ce4ab93893dabc0db1093e"
+      sha256 "030a55c3037efca44b44ea04a88a22457ff7ea2f43340bf8694aa08e31292884"
 
       resource "ctx-mcp" do
         url "https://github.com/lazyvamp/ctx-dist/releases/download/#{CTX_VERSION}/ctx-mcp-darwin-arm64"
-        sha256 "12743c20817dd8dfdce4ad204e7ff80d7454c58dd3c812d2989c43885a80c151"
+        sha256 "2d29443500e608faeb9088234881ea1e94a1164b6f2c5c86774a32483303e1d0"
       end
     else
       # macOS Intel is not shipped as a native binary. Rosetta runs
@@ -45,19 +45,19 @@ class Ctx < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/lazyvamp/ctx-dist/releases/download/#{CTX_VERSION}/ctx-linux-arm64"
-      sha256 "a9e0d6a8221e5e7f7a5fa6da5ad143c3c3d634dc88c085bb627fc0bbb0716055"
+      sha256 "e9df4568b6be7124c7998b32163a264ef78286008052337bd359aecd48edb2ef"
 
       resource "ctx-mcp" do
         url "https://github.com/lazyvamp/ctx-dist/releases/download/#{CTX_VERSION}/ctx-mcp-linux-arm64"
-        sha256 "87d0cb9d6045e5155174e0bdf396656b5daec7c23976271a265e4f2d922a3e01"
+        sha256 "ba31868aeb3aaa67d7a83fe58f2310dd96b87ead6e4ea138d949fdc95811a795"
       end
     else
       url "https://github.com/lazyvamp/ctx-dist/releases/download/#{CTX_VERSION}/ctx-linux-amd64"
-      sha256 "7acd674787daba21e492a6681479d7fa705b3f3173303a8c1747f5afb09e111c"
+      sha256 "23bc11015eaf6d454b441f23d8016c7074f507a04a1aab4f32dadb8b32a2ea08"
 
       resource "ctx-mcp" do
         url "https://github.com/lazyvamp/ctx-dist/releases/download/#{CTX_VERSION}/ctx-mcp-linux-amd64"
-        sha256 "fcb2b2dcd8f5ebd1e5e88ac4d5fa8b09ca346e37b02226cf53579cabacd55c46"
+        sha256 "ef02a01d39ccc3e6fed4d6d958883ac1f7eecb049140e4a9a65476fccade5789"
       end
     end
   end
